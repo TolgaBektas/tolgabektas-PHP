@@ -1,0 +1,21 @@
+RewriteEngine on
+
+#Seo url oluşturma
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+#Yeniden isimlendirme
+
+#RewriteRule ^haberler$ blog-details.php [NC,L]
+#blog-details.php nin artık adı haberler oldu
+
+#404 sayfası
+#ErrorDocument 404 /errors/notfound.html
+
+#Seo url linklendirme
+#id'ye göre çekme
+#RewriteRule ^bloglar/([0-9a-zA-Z-_]+)/([0-9a-zA-Z-_]+) blog_detay.php?blog_slug=$1&blogs_id=$2 [L,QSA]
+
+#slug ile çekme
+#RewriteRule ^bloglar/([0-9a-zA-Z-_]+)) blog_detay.php?blog_slug=$1 [L,QSA]
